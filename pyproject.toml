@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "regime-aware-strategy-allocator"
+version = "0.1.0"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.1",
+    "pydantic>=2.5",
+    "cvxpy>=1.4",
+    "scipy>=1.11",
+]
+
+[project.optional-dependencies]
+live = ["yfinance>=0.2"]
+dev  = ["pytest>=7.4"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["allocator*"]
